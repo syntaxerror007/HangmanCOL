@@ -1,11 +1,13 @@
 <component name="libraryTable">
   <library name="support-v4-21.0.3">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/61c5afa495a0d9bd7dcbe2e1ce92fad13d9548c0/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/61c5afa495a0d9bd7dcbe2e1ce92fad13d9548c0/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/61c5afa495a0d9bd7dcbe2e1ce92fad13d9548c0/output/jars/libs/internal_impl-21.0.3.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/21.0.3/support-v4-21.0.3-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

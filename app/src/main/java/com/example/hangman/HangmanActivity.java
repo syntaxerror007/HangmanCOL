@@ -1,35 +1,24 @@
 package com.example.hangman;
 
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-public class HangmanActivity extends Activity implements OnClickListener{
-	private AlertDialog helpAlert;
-
+public class HangmanActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
-        Button playButton = (Button)findViewById(R.id.playBtn);
+        if (getActionBar() != null)
+            getActionBar().hide();
+        Button playButton = (Button) findViewById(R.id.playBtn);
         playButton.setOnClickListener(this);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.hangman, menu);
-        return true;
     }
 
     @Override
@@ -37,42 +26,21 @@ public class HangmanActivity extends Activity implements OnClickListener{
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-    	switch (item.getItemId()) {
-    	  case android.R.id.home:
-    	    NavUtils.navigateUpFromSameTask(this);
-    	    return true;
-    	  case R.id.action_help:
-    	    showHelp();
-    	    return true;
-    	  }
-    	 
-    	  return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
-	@Override
-	public void onClick(View view) {
-		if (view.getId() == R.id.playBtn) {
-			Intent playIntent = new Intent(this, GameActivity.class);
-			this.startActivity(playIntent);
-		}
-		
-	}
-	
-	public void showHelp() {
-		  AlertDialog.Builder helpBuild = new AlertDialog.Builder(this);
-		 
-		  helpBuild.setTitle("Help");
-		  helpBuild.setMessage("Guess the word by selecting the letters.\n\n"
-		      + "You only have 6 wrong selections then it's game over!");
-		  helpBuild.setPositiveButton("OK",
-		    new DialogInterface.OnClickListener() {
-		      public void onClick(DialogInterface dialog, int id) {
-		        helpAlert.dismiss();
-		    }});
-		  helpAlert = helpBuild.create();
-		 
-		  helpBuild.show();
-		}
-	
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.playBtn) {
+            Intent playIntent = new Intent(this, GameActivity.class);
+            this.startActivity(playIntent);
+        }
+
+    }
 }

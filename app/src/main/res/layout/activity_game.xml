@@ -98,7 +98,7 @@
 		  android:layout_height="wrap_content"
 		  android:layout_gravity="center"
 		  android:layout_marginBottom="5dp"
-		  android:background="#990099"
+		  android:background="#7fc241"
 		  
 		  android:horizontalSpacing="5dp"
 		  android:numColumns="6"
